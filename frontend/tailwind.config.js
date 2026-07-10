@@ -1,0 +1,101 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        earth: {
+          50: '#f5f0ea',
+          100: '#e8dcc8',
+          200: '#d4c4a0',
+          300: '#c0ac78',
+          400: '#ac9450',
+          500: '#8B7355',
+          600: '#6d5a42',
+          700: '#4f4230',
+          800: '#322a1e',
+          900: '#1c1710',
+        },
+        leaf: {
+          50: '#f0f7ed',
+          100: '#d9edd1',
+          200: '#b3dba3',
+          300: '#8dc975',
+          400: '#67b747',
+          500: '#4CAF50',
+          600: '#3d8c40',
+          700: '#2e6930',
+          800: '#1e4620',
+          900: '#0f2310',
+        },
+        sprout: {
+          50: '#e8f5e9',
+          100: '#c8e6c9',
+          200: '#a5d6a7',
+          300: '#81c784',
+          400: '#66bb6a',
+          500: '#2E7D32',
+          600: '#1b5e20',
+          700: '#145214',
+          800: '#0d3b0d',
+          900: '#062406',
+        },
+        sunset: {
+          50: '#fff8f0',
+          100: '#ffedd4',
+          200: '#ffdba8',
+          300: '#ffc97c',
+          400: '#ffb750',
+          500: '#FF8C00',
+          600: '#cc7000',
+          700: '#995400',
+          800: '#663800',
+          900: '#331c00',
+        },
+        cream: {
+          50: '#FFFEF5',
+          100: '#FFFDE8',
+          200: '#FFF9C4',
+          300: '#FFF59D',
+          400: '#FFEE58',
+          500: '#F5F5DC',
+        },
+      },
+      fontFamily: {
+        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'gradient': 'gradient 8s ease infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+      },
+      keyframes: {
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        'bounce-gentle': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+      },
+      backgroundSize: {
+        '300%': '300%',
+      },
+    },
+  },
+  plugins: [],
+};

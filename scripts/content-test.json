@@ -1,0 +1,21 @@
+{
+  "chapters": [
+    {
+      "title": "Introduction",
+      "sections": [
+        {
+          "heading": "Project Overview",
+          "body": "GreenHarvest is a comprehensive full-stack agriculture platform designed to bridge the gap between farmers, agricultural suppliers, and industry experts. The platform serves as a centralized hub where users can explore crop information, browse agricultural products, read informative blog posts, view image galleries, submit inquiries, and access a wealth of agricultural knowledge. Built with modern web technologies, GreenHarvest delivers a rich, interactive user experience with smooth animations, dark/light theme support, fully responsive design, and a complete administrative backend for content management."
+        },
+        {
+          "heading": "Platform Capabilities",
+          "body": "The platform is structured as a monorepo containing two main applications: a RESTful API backend built with Node.js, Express, and MongoDB, and a dynamic single-page frontend built with React 18, Vite 5, and Tailwind CSS 3. The backend provides a comprehensive API with 33 endpoints for managing crops, products, blog posts, user inquiries, testimonials, FAQs, services, user accounts, file uploads, and analytics. The frontend consumes these APIs to deliver an engaging and visually appealing user experience with 13 distinct page views and a 7-section admin panel."
+        },
+        {
+          "heading": "Target Audience",
+          "body": "The platform serves multiple user personas: Farmers and agricultural workers researching crops and products; Agricultural suppliers listing products and reaching customers; Agronomists and experts sharing knowledge through the blog system; General users interested in sustainable farming and organic products; Platform administrators managing all content through the admin panel."
+        }
+      ]
+    }
+  ]
+}
