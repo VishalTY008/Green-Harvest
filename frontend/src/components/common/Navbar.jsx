@@ -5,7 +5,7 @@ import { HiMenu, HiX } from 'react-icons/hi';
 import { NAV_LINKS } from '../../utils/constants';
 import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import { FiSun, FiMoon, FiPackage, FiEdit2 } from 'react-icons/fi';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -68,11 +68,23 @@ export default function Navbar() {
             </button>
 
             {user ? (
-              <Link to={isAdmin ? '/admin' : '/profile'}
-                className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-leaf-500 text-white text-sm font-medium hover:bg-leaf-600 transition-colors"
-              >
-                {user.name?.split(' ')[0]}
-              </Link>
+              <>
+                <Link to="/write-blog"
+                  className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full border border-leaf-500 text-leaf-600 dark:text-leaf-400 text-sm font-medium hover:bg-leaf-500 hover:text-white transition-colors"
+                >
+                  <FiEdit2 size={14} /> Write Blog
+                </Link>
+                <Link to="/my-products"
+                  className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full border border-leaf-500 text-leaf-600 dark:text-leaf-400 text-sm font-medium hover:bg-leaf-500 hover:text-white transition-colors"
+                >
+                  <FiPackage size={14} /> My Products
+                </Link>
+                <Link to={isAdmin ? '/admin' : '/profile'}
+                  className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-leaf-500 text-white text-sm font-medium hover:bg-leaf-600 transition-colors"
+                >
+                  {user.name?.split(' ')[0]}
+                </Link>
+              </>
             ) : (
               <Link to="/login"
                 className="hidden sm:inline-flex px-5 py-2 rounded-full bg-earth-700 dark:bg-earth-600 text-white text-sm font-medium hover:bg-earth-800 transition-colors"
@@ -125,6 +137,20 @@ export default function Navbar() {
                     </Link>
                   </motion.div>
                 ))}
+                {user && (
+                  <>
+                    <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: NAV_LINKS.length * 0.05 }}>
+                      <Link to="/write-blog" className={`block px-4 py-3 rounded-xl text-lg font-medium transition-colors ${pathname === '/write-blog' ? 'bg-leaf-500/20 text-leaf-600 dark:text-leaf-400' : 'hover:bg-white/10'}`}>
+                        Write Blog
+                      </Link>
+                    </motion.div>
+                    <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: (NAV_LINKS.length + 1) * 0.05 }}>
+                      <Link to="/my-products" className={`block px-4 py-3 rounded-xl text-lg font-medium transition-colors ${pathname === '/my-products' ? 'bg-leaf-500/20 text-leaf-600 dark:text-leaf-400' : 'hover:bg-white/10'}`}>
+                        My Products
+                      </Link>
+                    </motion.div>
+                  </>
+                )}
               </div>
             </div>
           </motion.div>

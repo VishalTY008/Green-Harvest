@@ -31,6 +31,41 @@ exports.create = catchAsync(async (req, res) => {
   res.status(201).json({ success: true, blog });
 });
 
+exports.createUserBlog = catchAsync(async (req, res) => {
+  const { title, content, excerpt, image, tags } = req.body;
+  const blog = await Blog.create({
+    title,
+    content,
+    excerpt,
+    image,
+    tags,
+    author: req.user.name,
+    authorId: req.user._id,
+    published: false,
+  });
+  res.status(201).json({ success: true, blog });
+});
+
+exports.getMyBlogs = catchAsync(async (req, res) => {
+  const blogs = await Blog.find({ authorId: req.user._id }).sort('-createdAt');
+  res.json({ success: true, count: blogs.length, blogs });
+});
+
+exports.updateMyBlog = catchAsync(async (req, res) => {
+  const blog = await Blog.findOne({ _id: req.params.id, authorId: req.user._id });
+  if (!blog) throw new AppError('Blog not found or not authorized', 404);
+  const { title, content, excerpt, image, tags } = req.body;
+  Object.assign(blog, { title, content, excerpt, image, tags });
+  await blog.save();
+  res.json({ success: true, blog });
+});
+
+exports.deleteMyBlog = catchAsync(async (req, res) => {
+  const blog = await Blog.findOneAndDelete({ _id: req.params.id, authorId: req.user._id });
+  if (!blog) throw new AppError('Blog not found or not authorized', 404);
+  res.json({ success: true, message: 'Blog deleted' });
+});
+
 exports.update = catchAsync(async (req, res) => {
   const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
   if (!blog) throw new AppError('Blog not found', 404);

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiPlus, FiEdit2, FiTrash2 } from 'react-icons/fi';
 import Button from '../common/Button';
+import ImageUpload from '../common/ImageUpload';
 
 export default function ManageProducts() {
   const [products, setProducts] = useState([]);
@@ -49,7 +50,7 @@ export default function ManageProducts() {
             </select>
             <input value={form.price} onChange={e => setForm({...form, price: e.target.value})} type="number" step="0.01" placeholder="Price" required className="px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 focus:outline-none focus:border-leaf-500" />
             <input value={form.stock} onChange={e => setForm({...form, stock: e.target.value})} type="number" placeholder="Stock" required className="px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 focus:outline-none focus:border-leaf-500" />
-            <input value={form.images[0]} onChange={e => setForm({...form, images: [e.target.value]})} placeholder="Image URL" className="px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 focus:outline-none focus:border-leaf-500 col-span-2" />
+            <div className="col-span-2"><ImageUpload value={form.images[0]} onChange={url => setForm({...form, images: [url]})} /></div>
             <textarea value={form.description} onChange={e => setForm({...form, description: e.target.value})} placeholder="Description" rows={3} required className="px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 focus:outline-none focus:border-leaf-500 col-span-2" />
             <div className="col-span-2"><Button type="submit" variant="primary">{edit ? 'Update' : 'Create'} Product</Button></div>
           </form>

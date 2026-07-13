@@ -6,17 +6,29 @@ import GlassCard from '../components/common/GlassCard';
 import { getImageUrl } from '../utils/helpers';
 import { PRODUCT_CATEGORIES } from '../utils/constants';
 
+const defaultProducts = [
+  { _id: '1', name: 'Premium Wheat Seeds', price: 29.99, category: 'seeds', images: ['https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400'], description: 'High-yield wheat seeds for maximum production', unit: 'kg', stock: 150 },
+  { _id: '2', name: 'Organic Fertilizer', price: 19.99, category: 'fertilizers', images: ['https://images.unsplash.com/photo-1611843467160-25afb8df1074?w=400'], description: 'Nutrient-rich organic compost for healthy soil', unit: 'kg', stock: 200 },
+  { _id: '3', name: 'Drip Irrigation Kit', price: 89.99, category: 'equipment', images: ['https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400'], description: 'Complete drip irrigation system for water efficiency', unit: 'set', stock: 45 },
+  { _id: '4', name: 'Neem Oil Pesticide', price: 14.99, category: 'pesticides', images: ['https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400'], description: 'Natural pest control solution safe for crops', unit: 'L', stock: 80 },
+  { _id: '5', name: 'Organic Tomato Seeds', price: 4.99, category: 'seeds', images: ['https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400'], description: 'Heirloom tomato variety for rich harvests', unit: 'pack', stock: 300 },
+  { _id: '6', name: 'Soil Testing Kit', price: 24.99, category: 'equipment', images: ['https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=400'], description: 'Home soil analysis kit for optimal farming', unit: 'set', stock: 60 },
+  { _id: '7', name: 'Bio Growth Booster', price: 34.99, category: 'organic', images: ['https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400'], description: 'Natural growth enhancer for all crop types', unit: 'L', stock: 120 },
+  { _id: '8', name: 'Corn Hybrid Seeds', price: 22.50, category: 'seeds', images: ['https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400'], description: 'Premium hybrid corn seeds with high yield potential', unit: 'kg', stock: 180 },
+  { _id: '9', name: 'Garden Tool Set', price: 59.99, category: 'equipment', images: ['https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400'], description: 'Professional 5-piece garden tool set', unit: 'set', stock: 35 },
+];
+
 export default function Products() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(defaultProducts);
   const [activeCategory, setActiveCategory] = useState('all');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('/api/products');
+        const res = await fetch('/api/products?limit=100');
         const data = await res.json();
-        if (data.success) setProducts(data.products);
+        if (data.success && data.products.length) setProducts(data.products);
       } catch {} finally { setLoading(false); }
     };
     fetchProducts();

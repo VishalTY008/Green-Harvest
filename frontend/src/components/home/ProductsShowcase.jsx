@@ -8,11 +8,11 @@ import { PRODUCT_CATEGORIES } from '../../utils/constants';
 
 const defaultProducts = [
   { _id: '1', name: 'Premium Wheat Seeds', price: 29.99, category: 'seeds', images: ['https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400'], description: 'High-yield wheat seeds', unit: 'kg' },
-  { _id: '2', name: 'Organic Fertilizer', price: 19.99, category: 'fertilizers', images: ['https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=400'], description: 'Nutrient-rich organic compost', unit: 'kg' },
+  { _id: '2', name: 'Organic Fertilizer', price: 19.99, category: 'fertilizers', images: ['https://images.unsplash.com/photo-1611843467160-25afb8df1074?w=400'], description: 'Nutrient-rich organic compost', unit: 'kg' },
   { _id: '3', name: 'Drip Irrigation Kit', price: 89.99, category: 'equipment', images: ['https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400'], description: 'Complete drip irrigation system', unit: 'set' },
-  { _id: '4', name: 'Neem Oil Pesticide', price: 14.99, category: 'pesticides', images: ['https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=400'], description: 'Natural pest control solution', unit: 'L' },
+  { _id: '4', name: 'Neem Oil Pesticide', price: 14.99, category: 'pesticides', images: ['https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400'], description: 'Natural pest control solution', unit: 'L' },
   { _id: '5', name: 'Organic Tomato Seeds', price: 4.99, category: 'seeds', images: ['https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400'], description: 'Heirloom tomato variety seeds', unit: 'pack' },
-  { _id: '6', name: 'Soil Testing Kit', price: 24.99, category: 'equipment', images: ['https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=400'], description: 'Home soil analysis kit', unit: 'set' },
+  { _id: '6', name: 'Soil Testing Kit', price: 24.99, category: 'equipment', images: ['https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=400'], description: 'Home soil analysis kit', unit: 'set' },
 ];
 
 export default function ProductsShowcase() {

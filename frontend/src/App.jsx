@@ -26,6 +26,8 @@ const Login = lazy(() => import('./pages/Login'));
 const Register = lazy(() => import('./pages/Register'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Profile = lazy(() => import('./pages/Profile'));
+const MyProducts = lazy(() => import('./pages/MyProducts'));
+const WriteBlog = lazy(() => import('./pages/WriteBlog'));
 const Admin = lazy(() => import('./pages/Admin'));
 
 function PageLoader() {
@@ -56,6 +58,8 @@ function AnimatedRoutes() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/my-products" element={<MyProducts />} />
+          <Route path="/write-blog" element={<WriteBlog />} />
           <Route path="/admin/*" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

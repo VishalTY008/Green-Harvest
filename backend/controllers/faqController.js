@@ -8,6 +8,12 @@ exports.getAll = catchAsync(async (req, res) => {
   res.json({ success: true, faqs });
 });
 
+exports.getOne = catchAsync(async (req, res) => {
+  const faq = await FAQ.findById(req.params.id);
+  if (!faq) throw new AppError('FAQ not found', 404);
+  res.json({ success: true, faq });
+});
+
 exports.create = catchAsync(async (req, res) => {
   const faq = await FAQ.create(req.body);
   res.status(201).json({ success: true, faq });

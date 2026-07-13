@@ -8,6 +8,12 @@ exports.getAll = catchAsync(async (req, res) => {
   res.json({ success: true, testimonials });
 });
 
+exports.getOne = catchAsync(async (req, res) => {
+  const testimonial = await Testimonial.findById(req.params.id);
+  if (!testimonial) throw new AppError('Testimonial not found', 404);
+  res.json({ success: true, testimonial });
+});
+
 exports.create = catchAsync(async (req, res) => {
   const testimonial = await Testimonial.create(req.body);
   res.status(201).json({ success: true, testimonial });

@@ -11,7 +11,8 @@ const productSchema = new mongoose.Schema({
   ratings: { type: Number, default: 0, min: 0, max: 5 },
   numReviews: { type: Number, default: 0 },
   featured: { type: Boolean, default: false },
-  status: { type: String, enum: ['active', 'inactive'], default: 'active' },
+  status: { type: String, enum: ['active', 'inactive', 'pending'], default: 'active' },
+  seller: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Product', productSchema);

@@ -43,8 +43,23 @@ export function AuthProvider({ children }) {
     setUser(null);
   }, []);
 
+  const updateProfile = useCallback(async (profileData) => {
+    const { data } = await api.put('/auth/profile', profileData);
+    if (data.success) setUser(data.user);
+    return data;
+  }, []);
+
+  const updatePassword = useCallback(async (currentPassword, newPassword) => {
+    const { data } = await api.put('/auth/password', { currentPassword, newPassword });
+    if (data.success) {
+      localStorage.setItem('token', data.token);
+      setUser(data.user);
+    }
+    return data;
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, isAdmin: user?.role === 'admin' }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, updateProfile, updatePassword, isAdmin: user?.role === 'admin' }}>
       {children}
     </AuthContext.Provider>
   );

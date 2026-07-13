@@ -12,6 +12,9 @@ import ManageProducts from '../components/admin/ManageProducts';
 import ManageBlogs from '../components/admin/ManageBlogs';
 import ManageUsers from '../components/admin/ManageUsers';
 import ManageInquiries from '../components/admin/ManageInquiries';
+import ManageFAQs from '../components/admin/ManageFAQs';
+import ManageServices from '../components/admin/ManageServices';
+import ManageTestimonials from '../components/admin/ManageTestimonials';
 import Analytics from '../components/admin/Analytics';
 
 function AdminLayout({ children }) {
@@ -57,6 +60,9 @@ export default function Admin() {
           <Route path="blogs" element={<ManageBlogs />} />
           <Route path="users" element={<ManageUsers />} />
           <Route path="inquiries" element={<ManageInquiries />} />
+          <Route path="faqs" element={<ManageFAQs />} />
+          <Route path="services" element={<ManageServices />} />
+          <Route path="testimonials" element={<ManageTestimonials />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="*" element={<Navigate to="/admin" replace />} />
         </Routes>

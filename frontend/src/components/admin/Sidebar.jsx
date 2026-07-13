@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { FiGrid, FiUsers, FiFileText, FiPackage, FiFeather, FiMessageSquare, FiBarChart2, FiLogOut, FiChevronLeft } from 'react-icons/fi';
+import { FiGrid, FiUsers, FiFileText, FiPackage, FiFeather, FiMessageSquare, FiBarChart2, FiLogOut, FiChevronLeft, FiHelpCircle, FiBriefcase, FiStar } from 'react-icons/fi';
 import { useAuth } from '../../context/AuthContext';
 
 const links = [
@@ -8,6 +8,9 @@ const links = [
   { to: '/admin/products', icon: FiPackage, label: 'Products' },
   { to: '/admin/blogs', icon: FiFileText, label: 'Blogs' },
   { to: '/admin/inquiries', icon: FiMessageSquare, label: 'Inquiries' },
+  { to: '/admin/faqs', icon: FiHelpCircle, label: 'FAQs' },
+  { to: '/admin/services', icon: FiBriefcase, label: 'Services' },
+  { to: '/admin/testimonials', icon: FiStar, label: 'Testimonials' },
   { to: '/admin/users', icon: FiUsers, label: 'Users' },
   { to: '/admin/analytics', icon: FiBarChart2, label: 'Analytics' },
 ];

@@ -6,6 +6,7 @@ const blogSchema = new mongoose.Schema({
   content: { type: String, required: true },
   excerpt: { type: String, required: true, maxlength: 300 },
   author: { type: String, default: 'Admin' },
+  authorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null },
   image: { type: String, required: true },
   tags: [{ type: String }],
   published: { type: Boolean, default: false },

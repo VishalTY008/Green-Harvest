@@ -11,5 +11,6 @@ router.use('/services', require('./services'));
 router.use('/users', require('./users'));
 router.use('/upload', require('./upload'));
 router.use('/analytics', require('./analytics'));
+router.use('/my-products', require('./userProducts'));
 
 module.exports = router;
