@@ -14,7 +14,7 @@ export default function Hero() {
   const titleWords = "Cultivating Tomorrow's Harvest Today".split(' ');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-16 md:-mt-20">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-earth-900 via-earth-800 to-sprout-900 z-10" />
         <div className="absolute inset-0 opacity-30 z-0">

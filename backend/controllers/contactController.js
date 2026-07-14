@@ -2,9 +2,15 @@ const Contact = require('../models/Contact');
 const APIFeatures = require('../utils/apiFeatures');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/AppError');
+const { sendEmail, contactNotificationEmail } = require('../utils/email');
 
 exports.submit = catchAsync(async (req, res) => {
   const contact = await Contact.create(req.body);
+  sendEmail({
+    to: process.env.EMAIL_USER,
+    subject: `New Contact Inquiry: ${req.body.subject}`,
+    html: contactNotificationEmail(req.body),
+  }).catch(() => {});
   res.status(201).json({ success: true, message: 'Message sent successfully' });
 });
 

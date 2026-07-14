@@ -37,7 +37,7 @@ export default function Products() {
   const filtered = activeCategory === 'all' ? products : products.filter(p => p.category === activeCategory);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-24">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Helmet><title>Products | GreenHarvest</title></Helmet>
 
       <section className="section-padding">

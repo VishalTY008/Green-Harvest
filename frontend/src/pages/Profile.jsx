@@ -87,7 +87,7 @@ export default function Profile() {
   ];
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-24">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Helmet><title>Profile | GreenHarvest</title></Helmet>
       <section className="section-padding">
         <div className="container-custom max-w-4xl">

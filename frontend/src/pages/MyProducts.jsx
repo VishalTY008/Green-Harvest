@@ -88,7 +88,7 @@ export default function MyProducts() {
   }
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-24">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Helmet><title>My Products | GreenHarvest</title></Helmet>
       <section className="section-padding">
         <div className="container-custom">

@@ -94,7 +94,7 @@ export default function WriteBlog() {
   const inputClass = 'w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:border-leaf-500 transition-colors text-sm';
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="pt-24">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <Helmet><title>Write Blog | GreenHarvest</title></Helmet>
 
       <section className="section-padding">

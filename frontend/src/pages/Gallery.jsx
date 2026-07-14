@@ -25,7 +25,7 @@ export default function Gallery() {
   const filtered = active === 'all' ? images : images.filter(i => i.category === active);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-24">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Helmet><title>Gallery | GreenHarvest</title></Helmet>
 
       <section className="section-padding">

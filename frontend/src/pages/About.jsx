@@ -29,7 +29,7 @@ const team = [
 
 export default function About() {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="pt-20">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <Helmet><title>About Us | GreenHarvest</title></Helmet>
 
       <section className="section-padding">

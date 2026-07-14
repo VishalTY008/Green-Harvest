@@ -34,7 +34,7 @@ export default function BlogPost() {
   );
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-24">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Helmet><title>{post.title} | GreenHarvest</title></Helmet>
 
       <article className="section-padding">

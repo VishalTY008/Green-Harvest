@@ -23,7 +23,7 @@ export default function Contact() {
   };
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-24">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Helmet><title>Contact Us | GreenHarvest</title></Helmet>
 
       <section className="section-padding">

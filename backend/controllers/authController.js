@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const AppError = require('../utils/AppError');
 const catchAsync = require('../utils/catchAsync');
+const { sendEmail, welcomeEmail } = require('../utils/email');
 
 const sendTokenResponse = (user, statusCode, res) => {
   const token = user.generateToken();
@@ -21,6 +22,11 @@ exports.register = catchAsync(async (req, res) => {
   const existing = await User.findOne({ email });
   if (existing) throw new AppError('Email already registered', 400);
   const user = await User.create({ name, email, password });
+  sendEmail({
+    to: email,
+    subject: 'Welcome to GreenHarvest!',
+    html: welcomeEmail(name),
+  }).catch(() => {});
   sendTokenResponse(user, 201, res);
 });
 

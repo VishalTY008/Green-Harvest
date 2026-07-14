@@ -49,7 +49,7 @@ export default function Admin() {
   if (!isAdmin) return <Navigate to="/" replace />;
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-0">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Helmet><title>Admin Panel | GreenHarvest</title></Helmet>
 
       <AdminLayout>

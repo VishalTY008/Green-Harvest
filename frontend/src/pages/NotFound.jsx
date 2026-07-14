@@ -5,7 +5,7 @@ import Button from '../components/common/Button';
 
 export default function NotFound() {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen flex items-center justify-center pt-20 px-4">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen flex items-center justify-center px-4">
       <Helmet><title>404 - Not Found | GreenHarvest</title></Helmet>
 
       <div className="text-center">
